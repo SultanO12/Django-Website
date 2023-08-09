@@ -7,8 +7,8 @@
 {% for ct in cat %}
 <div class="col">
   <div class="card" style="width: 18rem;">
-    {% if prodct.image.url is not null %}
-    <img src="{{ prodct.image.url }}" class="card-img-top" alt="{{ prodct.title }}">
+    {% if ct.image.url is not null %}
+    <img src="{{ ct.image.url }}" class="card-img-top" alt="{{ ct.title }}">
     {% else %}
     <img src="https://кольца-колодца.рф/attachments/Slider/362d3676-0618-d894-a1a2-c8dc29d36f50/Screenshot_20201204_175942_com.yandex.browser-min.jpg?template=generic" class="card-img-top" alt="{{ prodct.title }}">
     {% endif %}
