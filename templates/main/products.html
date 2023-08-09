@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} Products Page {% endblock title %}
+
+{% block content %}
+<h1 class="text-center text-primary">Products:</h1>
+{% for ct in cat %}
+<div class="col">
+  <div class="card" style="width: 18rem;">
+    <img src="{{ ct.image.url }}" class="card-img-top" alt="{{ ct.title }}">
+    <div class="card-body">
+      <h5 class="card-title">{{ ct.title }} - {{ ct.price }} so'm</h5>
+      <p class="card-text">{{ ct.description }}</p>
+      <a href="{% url 'detiles' ct.slug %}" class="btn btn-primary">Подробнее</a>
+    </div>
+    </div>
+  </div>
+
+{% endfor %}
+{% endblock content %}

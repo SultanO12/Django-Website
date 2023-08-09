@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Update info{% endblock title %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <h2 class="text-center text-primary">Update profile info</h2>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    {{ form|crispy }}
+                </div>
+                <button type="submit" class="btn btn-success">Update</button>
+            </form>
+        </div>
+    </div>
+</div>  
+{% endif %}
+{% endblock content %}

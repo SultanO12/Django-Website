@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ product_title.title }}{% endblock title %}
+
+{% block content %}
+
+{% for product in products %}
+<div class="container">
+  <br>
+<br>
+<br>
+<br>
+<br>
+<div class="card mx-auto" style="width: 75rem;">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card-body text-center">
+          <h5 class="card-title"><strong>{{ product_title.title }}</strong></h5>
+          <p class="card-text">{{ product.description }}</p>
+          <h5 class="card-title"><strong>{{ product_title.price }} so'm</strong></h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        {% if product.image.url is not null %}
+    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.title }}">
+    {% else %}
+    <img src="https://кольца-колодца.рф/attachments/Slider/362d3676-0618-d894-a1a2-c8dc29d36f50/Screenshot_20201204_175942_com.yandex.browser-min.jpg?template=generic" class="card-img-top" alt="{{ prodct.title }}">
+    {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endfor %}
+
+{% endblock content %}
+
+

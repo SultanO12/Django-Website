@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} Main Page {% endblock title %}
+
+{% block content %}
+{% for prodct in prodcts %}
+<div class="col">
+  <br> 
+  <div class="card" style="width: 18rem;">
+    {% if prodct.image.url is not null %}
+    <img src="{{ prodct.image.url }}" class="card-img-top" alt="{{ prodct.title }}">
+    {% else %}
+    <img src="https://кольца-колодца.рф/attachments/Slider/362d3676-0618-d894-a1a2-c8dc29d36f50/Screenshot_20201204_175942_com.yandex.browser-min.jpg?template=generic" class="card-img-top" alt="{{ prodct.title }}">
+    {% endif %}
+    <div class="card-body">
+      <h5 class="card-title">{{ prodct.title }} - {{ prodct.price }} so'm</h5>
+      <p class="card-text">{{ prodct.description }}</p>
+      <a href="{% url 'detiles' prodct.slug %}" class="btn btn-primary">Подробнее</a>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock content %}

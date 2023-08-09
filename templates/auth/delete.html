@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Delete user{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <h2 class="text-center text-primary">Вы точно хотите удалить аккaунт?</h2>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    {{ form|crispy }}
+                </div>
+                <center>
+                <button type="submit" class="btn btn-danger">Да, удалить</button>
+                <hr>
+                <a href="{% url 'userinfo' %}" class="btn btn-success">Нет, назад</a>
+            </center>
+            </form>
+        </div>
+    </div>
+</div>  
+{% endblock content %}
